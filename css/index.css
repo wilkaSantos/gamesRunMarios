@@ -1,0 +1,163 @@
+
+/* = = = HEADER GAME  = = = */
+.menu-top{
+    position: relative;
+    width: 60%;
+    height: 5rem;
+    margin: 7rem auto 0;
+}
+
+.restartGame{
+    position: absolute;
+    right: 0;
+    width: 5rem;
+    height: 4.7rem;
+
+    border: none;
+    background: transparent;
+}
+
+.restartGame img{
+    width: 5rem;
+    height: 4.7rem;
+}
+
+
+/* = = = CONTAINER GAME  = = = */
+.hero{
+    position: relative;
+    overflow: hidden;
+
+    width: 60%;
+    height: 65%;
+    margin: .3rem auto;
+
+    background: linear-gradient(#87CEEB, #E0F6FF);
+    border-bottom: 1rem solid #008000;
+}
+
+.clouds{
+    position: absolute;
+    width: 55rem;
+    margin-top: 5rem;
+    animation: cloudsRun 10s infinite linear;
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 5rem;
+
+    animation: pipeRun 2.5s infinite linear;
+}
+
+.stoneBlock{
+    position: absolute;
+    bottom: 0;
+    width: 2.5rem;
+    right: -5rem;
+
+    animation: blockRun 2.5s infinite linear 11s;
+}
+
+.mario{
+    position: absolute;
+    bottom: 0;
+    width: 8.5rem;
+}
+
+.container-stopwatch{
+    position: absolute;
+    font-family: var(--txt-font);
+    font-size: 4rem;
+    color: #000;
+
+    display: flex;
+    right: 1.6rem;
+    top: 1.6rem;
+}
+
+.textGameOver{
+    position: absolute;
+    text-transform: uppercase;
+    font-family: var(--txt-gameOver);
+    font-size: 5.4rem;
+    z-index: 999;
+
+    top: 20rem;
+    left: 20%;
+    right: 20%;
+    translate: (-20%, -20%);
+    color: var(--fc-txt-gameOver);
+    text-shadow: 3px 6px 0 #000;
+
+    animation: gameOver 2s ease;
+}
+
+.disable{
+    display: none;
+}
+
+/* = = =  ACTIONS  = = = */
+
+.jump{
+    animation: jumper 500ms infinite ease-out;
+}
+
+/* = = =  ANIMATIONS  = = = */
+
+@keyframes pipeRun{
+    from{
+        right: -5rem;
+    }
+    to{
+        right: 101%;
+    }
+}
+
+@keyframes cloudsRun{
+    from{
+        right: -5rem;
+    }
+    to{
+        right: 101%;
+    }
+}
+
+@keyframes jumper{
+    0%{
+        bottom: 0;
+    }
+    40%{
+        bottom: 10rem;
+    }
+    50%{
+        bottom: 10rem;
+    }
+    70%{
+        bottom: 10rem;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+@keyframes blockRun{
+    from{
+        right: -5rem;
+    }
+    to{
+        right: 101%;
+    }
+}
+
+@keyframes gameOver{
+    from{
+        opacity: 0;
+        transform: translateY(40rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
